@@ -73,6 +73,13 @@ namespace AssociatedWinIcon
 			return iconInfo.Icon = ExtractIcon(iconInfo);
 		}
 
+		public IEnumerable<string> GetRegExtensions()
+		{
+			if (_iconInfos == null || _iconInfos.Count <= 0) return null;
+
+			return _iconInfos.Keys;
+		}
+
 		private static Icon ExtractIcon(IconInfo iconInfo)
 		{
 			var hIcon = ExtractIcon(0, iconInfo.IconPath, iconInfo.IconIndex);
